@@ -1,0 +1,11 @@
+#  build files
+build/
+
+# gradle files
+.gradle/
+!gradle-wrapper.jar
+gradle/
+gradlew.bat
+
+# IDE files
+.idea/

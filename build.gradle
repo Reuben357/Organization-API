@@ -1,0 +1,41 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+apply plugin: 'java'
+apply plugin: 'application'
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+applicationName = 'Organization_API'
+mainClassName = 'routes/Routes'
+
+
+task stage(dependsOn: ['clean', 'installDist'])
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // https://mvnrepository.com/artifact/com.sparkjava/spark-core
+    implementation group: 'com.sparkjava', name: 'spark-core', version: '2.6.0'
+    // https://mvnrepository.com/artifact/org.slf4j/slf4j-simple
+    implementation group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.25'
+    // https://mvnrepository.com/artifact/org.postgresql/postgresql
+    implementation group: 'org.postgresql', name: 'postgresql', version: '42.2.12'
+    // https://mvnrepository.com/artifact/org.sql2o/sql2o
+    implementation group: 'org.sql2o', name: 'sql2o', version: '1.6.0'
+    // https://mvnrepository.com/artifact/org.projectlombok/lombok
+    implementation group: 'org.projectlombok', name: 'lombok', version: '1.18.12'
+    // https://mvnrepository.com/artifact/org.ini4j/ini4j
+    implementation group: 'org.ini4j', name: 'ini4j', version: '0.5.4'
+    implementation group: 'com.sparkjava', name: 'spark-template-handlebars', version: '2.5.5'
+
+    implementation  "com.google.code.gson:gson:2.5"
+    implementation  group: 'com.h2database', name: 'h2', version: '1.4.191'
+
+    testImplementation group: 'junit', name: 'junit', version: '4.12'
+}
